@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap 5 input and JavaScript and PHP Example j5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .size1 {
+        font-size: 50px;
+    }
+</style>
+<script>
+    function set2fig(num) {
+        // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+        var ret;
+
+        if (num < 10) {
+            ret = "0" + num;
+        }
+
+        else {
+            ret = num;
+        }
+
+        return ret;
+    }
+
+    function showClock2() {
+        var nowTime = new Date();
+        var nowHour = set2fig(nowTime.getHours());
+        var nowMin = set2fig(nowTime.getMinutes());
+        var nowSec = set2fig(nowTime.getSeconds());
+        var msg = "現在時刻:" + nowHour + ":" + nowMin + ":" + nowSec ;
+        document.getElementById("RealtimeClockArea2").innerHTML = msg;
+    }
+
+    setInterval('showClock2()', 1000);
+</script>
+
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center">
+            宿泊予約登録
+        </h2>
+        <div
+            style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333; border-radius: 5px; background-color: #78bb72; color: #ffffff;">
+            <p class="size1 text-center" id="RealtimeClockArea2"></p>
+        </div>
+        <p class="text-danger">*必須項目　necessary for reservation</p>
+
+        <form action="php/action5.php" method="post">
+            <div class="row mt-5">
+                <div class="col-sm-4 mt-3">
+                    <div class="input-group mt1">
+                        <h5>
+                            <span class="text-danger">*</span>名(First name)
+                        </h5>
+                        <div class="input-group mt-1">
+                            <label id="msg1" for="phase1" class="input-group-text text-light bg-success">first
+                                name</label>
+                            <input id="phase1" name="phase1" type="text" class="form-control form-control-lg "
+                                placeholder="名前">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mt-3">
+                    <div class="input-group mt1">
+                        <h5>
+                            ミドルネーム(Middle name)
+                        </h5>
+                        <div class="input-group mt1">
+                            <label id="msg2" for="phase2" class="input-group-text text-light bg-success">middle
+                                name</label>
+                            <input id="phase2" name="phase2" type="text" class="form-control form-control-lg"
+                                placeholder="中間名">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mt-3">
+                    <div class="input-group mt1">
+                        <h5>
+                            <span class="text-danger">*</span>姓(Last name)
+                        </h5>
+                        <div class="input-group mt1">
+                            <label id="msg3" for="phase3" class="input-group-text text-light bg-success">last
+                                name</label>
+                            <input id="phase3" name="phase3" type="text" class="form-control form-control-lg"
+                                placeholder="名字">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-3 mt-3">
+                    <div class="input-group mt-1">
+                        <h5>
+                            <span class="text-danger">*</span>大人
+                        </h5>
+                        <div class="input-group mt-1">
+                            <select class="form-select" id="sel1" name="sellist1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label id="sel1" for="sellist1" class="display-6 input-group-text">人</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-3">
+                    <div class="input-group mt-1">
+                        <h5>
+                            <span class="text-danger">*</span>子供
+                        </h5>
+                        <div class="input-group mt-1">
+                            <select class="form-select" id="sel2" name="sellist2">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label id="sel2" for="sellist2" class="display-6 input-group-text">人</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-3">
+                    <div class="input-group mt-1">
+                        <h5>
+                            <span class="text-danger">*</span>部屋数
+                        </h5>
+                        <div class="input-group mt-1">
+                            <select class="form-select" id="sel3" name="sellist3">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label id="sel3" for="sellist3" class="display-6 input-group-text">部屋</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-3">
+                    <div class="input-group mt-1">
+                        <h5>
+                            <span class="text-danger">*</span>泊数
+                        </h5>
+                        <div class="input-group mt-1">
+                            <select class="form-select" id="sel4" name="sellist4">
+                                <option value="日帰り(Day trip)">日帰り(Day trip)</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8以上(or more)">8以上(or more)</option>
+                            </select>
+                            <label id="sel3" for="sellist4" class="display-6 input-group-text">泊</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-5">
+                <h5>
+                    朝食（breakfast）
+                </h5>
+            </div>
+            <div class="form-check form-check-inline mt-3">
+                <input type="radio" class="form-check-input" id="radiom1" name="optradio2" value="included" checked>
+                <label class="form-check-label" for="radio1">付き　included</label>
+            </div>
+            <div class="form-check form-check-inline mt-3">
+                <input type="radio" class="form-check-input" id="radiom2" name="optradio2" value="not included">
+                <label class="form-check-label" for="radio2">なし　not included</label>
+            </div>
+
+            <div class="row mt-5">
+                <h5>チェックイン・チェックアウト</h5>
+                <!--checkin-->
+                <div class="col-sm-4 mt-3">
+                    <label id="ci-p" for="ci"><span class="text-danger">*</span><span class="jp">チェックイン</span>
+                        <!-- Check In--><span class="jp">：</span><span id="ci-a"
+                            class="jp text-success">未入力</span></label>
+                    <input id="ci" name="ci" type="date" class="form-control mt-2"
+                        onchange="document.getElementById('ci-a').innerHTML = document.getElementById('ci').value;"
+                        onblur="checkOutDate()">
+                </div>
+                <div class="col-sm-4 mt-3">
+                    <label id="cit-p" for="cit"><span class="text-danger">*</span><span class="jp">時間</span>
+                        <!-- Check In Time--><span class="jp">：</span><span id="cit-a"
+                            class="jp text-success">15:00</span></label>
+                    <select id="cit" name="cit" class="form-control mt-2"
+                        onchange="document.getElementById('cit-a').innerHTML = document.getElementById('cit').value;">
+                        <option value="07:00">07:00</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="21:00">21:00</option>
+                    </select>
+                </div>
+                <div class="row mt-2">
+                    <!--checkout-->
+                    <div class="col-sm-4 mt-3">
+                        <label id="co-p" for="co"><span class="text-danger">*</span><span class="jp">チェックアウト</span>
+                            <!-- Check Out--><span class="jp">：</span><span id="co-a"
+                                class="jp text-success">未入力</span></label>
+                        <input id="co" name="co" type="date" class="form-control mt-2"
+                            onchange="document.getElementById('co-a').innerHTML = document.getElementById('co').value;">
+                    </div>
+                    <div class="col-sm-4 mt-3">
+                        <label id="cit-p" for="cit"><span class="text-danger">*</span><span class="jp">時間</span>
+                            <!-- Check out Time--><span class="jp">：</span><span id="cot-a"
+                                class="jp text-success">15:00</span></label>
+                        <select id="cot" name="cot" class="form-control mt-2"
+                            onchange="document.getElementById('cot-a').innerHTML = document.getElementById('cot').value;">
+                            <option value="07:00">07:00</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                        </select>
+
+                    </div>
+                </div>
+                <p>
+                    <button type="submit" id="submit" name="submit" class="btn btn-outline-danger btn-lg mt-5"
+                        onclick="return confirm('この内容で確定しますか？')">送信</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
