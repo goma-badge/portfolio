@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap5 button and JavaScript Example bs3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  .img1 {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .img2 {
+    width: 100%;
+    height: 280px;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .img3 {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 3px 8px 12px 0 rgba(150, 150, 150, 0.3);
+    margin: 10px;
+  }
+
+  .img4 {
+    width: 20%;
+    height: 60px;
+    border-radius: 5px;
+    margin: 5px 3px 0 5px;
+  }
+</style>
+
+<body>
+  <h1 class="display-3 bg-secondary text-light text-center"> Bootstrap 5 Button and JavaScript<h1>
+
+      <div class="container mt-3">
+        <ol>
+          <li>
+            <h2>Button Styles btn-xxxx</h2>
+            <button type="button" class="btn">Basic</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-link">Link</button>
+
+          <li>
+            <h2 class="mt-5">Button Styles btn-outline-xxxx</h2>
+            <button type="button" class="btn">Basic</button>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="button" class="btn btn-outline-success">Success</button>
+            <button type="button" class="btn btn-outline-info">Info</button>
+            <button type="button" class="btn btn-outline-warning">Warning</button>
+            <button type="button" class="btn btn-outline-danger">Danger</button>
+            <button type="button" class="btn btn-outline-dark">Dark</button>
+            <button type="button" class="btn btn-outline-light text-dark">Light</button>
+            <button type="button" class="btn btn-outline-link">Link</button>
+
+            <p class="alert alert-success mt-3">image on button and onclick/onmouseover function</p>
+            <div class="row">
+              <div class="col-sm-4">
+                <button id="btn1" name="btn1" type="button" class="btn btn-outline-light text-dark"
+                  onclick="document.getElementById('myImg1').src='../../images/sakura.jpg'; document.getElementById('msg1').innerHTML='Changed!';">
+                  <img id="myImg1" class="img1" src="../../images/tanpopo.jpg">
+                  <p id="msg1" class="display-6 alert alert-success">Click me!</p>
+                </button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <input class="btn btn-success" type="reset" value="Reset"
+                    onclick="document.getElementById('myImg1').src='../../images/tanpopo.jpg'; document.getElementById('msg1').innerHTML='Click me!';">
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <button id="btn3" name="btn3" type="button" class="btn btn-outline-light text-dark"
+                  onclick="changeStyle()">
+                  <img id="myImg2" class="img1" src="../../images/rindou.jpg">
+                  <p id="msg2" class="display-6">Click to a Circle!</p>
+                </button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <input class="btn btn-warning" type="reset" value="Reset" onclick="backStyle()">
+                </div>
+              </div>
+              <script>
+                function changeStyle() {
+                  document.getElementById("myImg2").style.borderRadius = "50%";
+                  document.getElementById("msg2").innerHTML = "Circle!";
+                  document.getElementById("msg2").style.backgroundColor = "purple";
+                  document.getElementById("msg2").style.color = "white";
+                }
+                function backStyle() {
+                  document.getElementById("myImg2").style.borderRadius = "5px";
+                  document.getElementById("msg2").innerHTML = "Click to a Cirle!";
+                  document.getElementById("msg2").style.backgroundColor = "rgba(245,245,245,0.1)";
+                  document.getElementById("msg2").style.color = "#555555";
+                }
+              </script>
+
+              <div class="col-sm-4">
+                <img id="here" class="img3" src="../../images/sakura.jpg">
+                <p>
+                  <img id="subt1" class="img4" src="../../images/sakura.jpg" onmouseover="picChange(1)">
+                  <img id="subt2" class="img4" src="../../images/tanpopo.jpg" onmouseover="picChange(2)">
+                  <img id="subt3" class="img4" src="../../images/tsutsuji.jpg" onmouseover="picChange(3)">
+                  <img id="subt4" class="img4" src="../../images/rindou.jpg" onmouseover="picChange(4)">
+
+              </div>
+            </div>
+            <script>
+              function picChange(px) {
+                var strx = "subt" + px;
+                document.getElementById("here").src = document.getElementById(strx).src;
+              }
+            </script>
+          <li>
+            <h2 class="mt-5">Button tags</h2>
+            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <button class="btn btn-primary" type="submit">送信</button>
+            <input class="btn btn-primary" type="button" value="Input">
+            <input class="btn btn-primary" type="submit" value="Submit">
+            <input class="btn btn-primary" type="reset" value="Reset">
+            <p>
+            <div class="row">
+              <p class="alert alert-danger">card on button and click function</p>
+              <div class="col-sm-4">
+                <button class="btn btn-outline-light text-dark" type="button">
+                  <div class="card">
+                    <img class="card-img-top img1" src="../../images/5.jpg">
+                    <div class="card-body bg-primary text-light">
+                      <h5 class="card-title">Dragon</h5>
+                      <p class="card-text">
+                        Mr. Satoshi Kamiya
+                        folded the greatest dragon
+                        with just one piece of paper!</p>
+                      <p id="demoB" class="display-6 alert alert-primary">Did you know him?</>
+
+                    </div>
+                  </div>
+                </button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button class="btn btn-primary text-light me-md-2" type="button"
+                    onclick="document.getElementById('demoB').innerHTML='Yes,I know him.'">YES</button>
+                  <button class="btn btn-danger text-light" type="button"
+                    onclick="document.getElementById('demoB').innerHTML='No,I do not know him.'">NO</button>
+                </div>
+              </div>
+
+              <script>
+                function pickotoba() {
+                  document.getElementById("imgPicA").src = "../../images/owl.jpg";
+                  document.getElementById("kotoba").style = "100%";
+                  document.getElementById("kotoba").innerHTML = "Changed!";
+                }
+              </script>
+
+              <div class="col-sm-4">
+                <button class="btn btn-outline-light text-dark" type="button" onclick="pickotoba()">
+                  <div class="card">
+                    <img id="imgPicA" class="card-img-top img2" src="../../images/kusutama.jpg">
+                    <div class="card-body bg-warning text-light">
+                      <h5 class="card-title">ORIGAMI</h5>
+                      <p id="kotoba" class="alert display-6 alert-warning">
+                        To change the picture? Click me!</p>
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <div class="col-sm-4">
+                <button class="btn btn-outline-light text-dark" id="ask1" type="button">
+                  <div class="card">
+                    <img class="card-img-top img1" src="../../images/kusudama2.jpg">
+                    <div class="card-body bg-success text-light">
+                      <h5 class="card-title">Kusudama</h5>
+                      <p class="card-text">30 units and hours are required for the Kusudama.</p>
+                      <p id="demoC" class="display-6 alert alert-success">Do you like it?</p>
+                    </div>
+                  </div>
+                </button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button class="btn btn-success text-light me-md-2" type="button"
+                    onclick="document.getElementById('demoC').innerHTML='Yes,I like it.'">YES</button>
+                  <button class="btn btn-danger text-light" type="button"
+                    onclick="document.getElementById('demoC').innerHTML='No,I do not like it.'">NO</button>
+                </div>
+                <div>
+                  <div>
+
+          <li>
+            <h2 class="mt-5">Button size</h2>
+            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+
+          <li>
+            <h2 class="mt-5">Disabled state</h2>
+            <p class="alert alert-warning">ボタンを非アクティブに見せるには,button 要素に disabled を追加します。無効化されたボタンには pointer-events: none
+              が適用され,ホバーやアクティブな状態がトリガーされるのを防ぎます.</p>
+            <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+            <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+
+          <li>
+            <h2 class="mt-5">Block buttons for レスポンシブスタック</h2>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+            </div>
+            <p>
+            <div class="d-grid gap-2 d-md-block">
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+            </div>
+            <p>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary me-md-2" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+            </div>
+
+          <li>
+            <h2 class="mt-5">Toggle states</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Toggle
+              button</button>
+            <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off"
+              aria-pressed="true">Active toggle button</button>
+            <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled
+              toggle button</button>
+            <p class="mt-3">
+              <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
+              <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button"
+                aria-pressed="true">Active toggle link</a>
+              <a href="#" class="btn btn-primary disabled" tabindex="-1" aria-disabled="true" role="button"
+                data-bs-toggle="button">Disabled toggle link</a>
+        </ol>
+      </div>
+
+</body>
+
+</html>

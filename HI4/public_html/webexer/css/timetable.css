@@ -1,0 +1,56 @@
+.jap {
+    background-color: #e67070;
+    color: black;
+}
+.mat {
+    background-color: #5068f0;
+    color: black;
+}
+.sya{
+    background-color: #d8b544;
+    color: black;
+}
+.sci {
+    background: #7af394;
+    color: black;
+}
+.mor{
+    background-color: #d4f738;
+    color: black;
+}
+.mus{
+    background-color: #c7f5dc;
+    color: black;
+}
+.gak{
+    background-color: #e79796;
+    color: black;
+}
+.eng{
+    background-color: #ffc98b;
+    color: black;
+}
+.sou{
+    background-color: #ffb284;
+    color: black;
+}
+.phy{
+    background-color: #c6c09c;
+    color: black;
+}
+.hom{
+    background-color: rgb(100, 228, 217);
+    color: black;
+}
+.gyo{
+    background-color: rgb(252, 239, 182);
+    color: black;
+}
+.hour{
+    background-color: rgba(170, 165, 165, 0.925);
+    color:black;
+}
+.day{
+    background-color:rgba(170, 165, 165, 0.925);
+    color:black;
+}

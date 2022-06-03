@@ -1,0 +1,125 @@
+@media only screen and (max-width: 767px){
+    img{
+      width: 80%;
+      height: auto;
+    }
+  }
+  /* pc　768px以上 */
+  @media only screen and (min-width: 768px), print {
+    img{
+      width: 55%;
+      height: auto;
+    }
+  }
+
+  p{font-size: 108%}
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 650px;
+    table-layout: fixed;
+    color: #000000;
+  }
+  
+  table tr {
+    background-color: #fff;
+    padding: .35em;
+    border-bottom: 1px dotted #000000;
+  }
+  table tr:last-child{
+     border-bottom: 2px solid #18521b;
+  }
+  table th,
+  table td {
+    padding: 1em 10px 1em 1em;
+  }
+  tbody th {
+      color: #000000;
+  }
+  .txt{
+     text-align: left;
+     font-size: .85em;
+  }
+  .price{
+     text-align: right;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+      width:100%
+    }
+    table th{
+      display: block;
+      border-right: none;
+      border-bottom: 2px solid #0f7d13;
+      padding-bottom: .6em;
+      margin-bottom: .6em;
+  
+    }
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      display: block;
+      margin-bottom: 2em;
+          border-bottom: 2px solid #0f7d13;
+    }
+    
+    table td {
+      border-bottom: 1px solid #bbb;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+      padding: .625em .625em .625em 4em;
+      border-right: none;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .inner {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  @media screen and (max-width: 999px) {
+    .inner {
+      width: 97%;
+    }
+  }
+  
+  /*親要素*/
+  .text-center-text-left-wrap {
+    text-align: center;
+  }
+  
+  /*子要素(リスト部分)*/
+  .text-center-text-left__child {
+    text-align: left;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+  }
+
+  p{font-size: 108%}
